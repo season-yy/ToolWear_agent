@@ -2,7 +2,7 @@
 
 “刃知”面向刀具磨损研究中的算法选型与实验复现问题。用户在网页中定义数据、标签、信号通道、滑窗和训练预算；六个固定 Agent 基于 AgentTeams 协作完成数据治理、候选生成、人工审批、真实训练、评估诊断、停止决策和报告归档。
 
-![刃知真实实验闭环](docs/assets/demo/09-decision-archive.png)
+![刃知真实实验闭环](docs/assets/demo/01-decision-archive.png)
 
 > 当前 P0 已在 PHM2010 C1 上跑通。公开仓库不包含原始数据、API Key、Token、模型权重或本机私有日志。
 
