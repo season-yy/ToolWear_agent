@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "team": "ToolWear_agent",
+  "framework": "AgentTeams v1.2.2",
+  "status": "completed_mini",
+  "agents": [
+    "ExperimentManagerAgent",
+    "DataStewardAgent",
+    "AlgorithmArchitectAgent",
+    "CodeTrainingEngineerAgent",
+    "EvaluationGovernorAgent",
+    "ReportMemoryCuratorAgent"
+  ],
+  "structured_llm_calls": 7,
+  "policy_rejections_recovered": 1,
+  "candidate_count": 3,
+  "approved_pipeline": "statistical_features_random_forest",
+  "decision": {
+    "action": "stop",
+    "basis_split": "validation",
+    "reason_summary": "P0 验证目标已达到；保留过拟合与类别不平衡诊断，停止额外训练。"
+  },
+  "final_test_used": false,
+  "evidence_count": 28
+}

@@ -1,0 +1,21 @@
+{
+  "task_type": "toolwear_experiment",
+  "coordinator": "human",
+  "leader": "ExperimentManagerAgent",
+  "objective": "在 PHM2010 C1 上完成四阶段刀具磨损分类的小样本验证闭环。",
+  "constraints": {
+    "candidate_count": 3,
+    "sample_fraction": 0.2,
+    "split_strategy": "group_by_cut",
+    "final_test_policy": "locked_until_final_approval",
+    "human_approval_required": true
+  },
+  "expected_outputs": [
+    "candidate_pipelines",
+    "approved_revision",
+    "validation_metrics",
+    "structured_diagnosis",
+    "decision",
+    "evidence_index"
+  ]
+}

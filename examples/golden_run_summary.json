@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment_id": "experiment-def463e61abd4da1b5f4c84a58878265",
+  "trace_id": "trace-fb0fbc1f707642faad890d6796bd963d",
+  "run_id": "run-5060d635be9bc80a9cccb7f6",
+  "dataset": "PHM2010 C1",
+  "cuts": 315,
+  "channels": 7,
+  "split_strategy": "group_by_cut",
+  "split_ratios": {
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2
+  },
+  "sample_fraction": 0.2,
+  "selected_pipeline": "statistical_features_random_forest",
+  "validation": {
+    "samples": 2016,
+    "macro_f1": 0.93754,
+    "balanced_accuracy": 0.933633
+  },
+  "final_test_used": false,
+  "decision": "stop",
+  "evidence_count": 28
+}

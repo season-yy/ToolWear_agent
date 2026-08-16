@@ -1,0 +1,33 @@
+{
+  "title": "PHM2010 C1 四阶段磨损分类示例",
+  "user_request": "使用 C1 七通道数据快速验证四阶段分类，并比较统计特征与深度学习候选。",
+  "dataset_id": "phm2010",
+  "cutter_ids": [
+    "C1"
+  ],
+  "input_channels": [
+    "force_x",
+    "force_y",
+    "force_z",
+    "vibration_x",
+    "vibration_y",
+    "vibration_z",
+    "acoustic_emission_rms"
+  ],
+  "vb_aggregation": "max",
+  "vb_thresholds_um": [
+    90.0,
+    130.0,
+    160.0
+  ],
+  "enable_vb_regression": false,
+  "train_ratio": 0.6,
+  "validation_ratio": 0.2,
+  "test_ratio": 0.2,
+  "random_seed": 42,
+  "window_length": 4096,
+  "overlap": 0.5,
+  "sample_fraction": 0.2,
+  "max_windows_per_cut": 32,
+  "mode": "quick"
+}

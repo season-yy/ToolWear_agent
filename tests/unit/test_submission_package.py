@@ -76,6 +76,31 @@ class SubmissionPackageTests(unittest.TestCase):
 
             self.assertEqual(result.file_count, 2)
 
+    def test_includes_public_input_and_output_examples(self) -> None:
+        """公开代码包必须包含可解析的样例输入和输出。"""
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir) / "repo"
+            (root / "examples").mkdir(parents=True)
+            (root / "README.md").write_text("# Demo\n", encoding="utf-8")
+            (root / "examples" / "input.json").write_text(
+                '{"dataset_id": "phm2010"}\n',
+                encoding="utf-8",
+            )
+            (root / "examples" / "output.json").write_text(
+                '{"status": "completed"}\n',
+                encoding="utf-8",
+            )
+            output = Path(temp_dir) / "submission.zip"
+
+            result = build_submission_package(root, output)
+
+            self.assertEqual(result.file_count, 3)
+            with zipfile.ZipFile(output) as archive:
+                names = set(archive.namelist())
+            self.assertIn("examples/input.json", names)
+            self.assertIn("examples/output.json", names)
+
     def test_excludes_presentation_inspection_sidecar(self) -> None:
         """PPT 诊断 sidecar 和过期截图不属于参赛材料，不能进入提交包。"""
 

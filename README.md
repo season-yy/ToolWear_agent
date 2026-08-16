@@ -67,6 +67,22 @@ flowchart LR
 
 每一步都由后端状态机控制。页面刷新或进程重启后，可从 SQLite 恢复实验状态，不需要重新切分已经缓存的数据。
 
+## 初赛代码包完整性
+
+| 官方要求 | 仓库位置 |
+| --- | --- |
+| 运行入口 | `scripts/start_local.ps1`，启动 FastAPI 与 Streamlit |
+| 依赖说明 | `pyproject.toml` 和本文“快速开始” |
+| 配置文件 | `.env.example`，不包含真实密钥 |
+| 样例输入输出 | `examples/`，包含 API 与 AgentTeams 脱敏 JSON |
+| 运行证据 | `docs/run-evidence.md`、`docs/assets/demo/` 和 Evidence 清单 |
+
+一键检查上述文件及 JSON 样例：
+
+```powershell
+python .\scripts\verify_submission_readiness.py
+```
+
 ## 快速开始
 
 ### 1. 环境
@@ -152,6 +168,7 @@ toolwear_agent/          核心 Python 包
   agentteams/            官方框架适配与 Skill 客户端
 deploy/agentteams/       AgentTeams 部署配置与复验说明
 scripts/                 启动、Golden Flow 和提交包脚本
+examples/                脱敏 API/AgentTeams 样例输入输出
 tests/                   单元与集成测试
 docs/                    架构、安全、Skill、演示和参赛材料
 ```
@@ -166,6 +183,8 @@ docs/                    架构、安全、Skill、演示和参赛材料
 - [PPT 证据索引](docs/submission/PPT证据索引.md)
 - [比赛要求映射](docs/competition-mapping.md)
 - [演示脚本](docs/demo-script.md)
+- [真实运行证据](docs/run-evidence.md)
+- [样例输入输出](examples/README.md)
 
 ## 当前边界与路线
 

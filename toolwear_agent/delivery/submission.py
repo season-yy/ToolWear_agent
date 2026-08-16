@@ -23,6 +23,7 @@ ALLOWLIST_FILES = (
 ALLOWLIST_DIRECTORIES = (
     "deploy",
     "docs",
+    "examples",
     "scripts",
     "tasks",
     "tests",
