@@ -1,0 +1,30 @@
+[project]
+name = "toolwear-agent"
+version = "0.1.0"
+description = "刃知：基于 AgentTeams 的刀具磨损监测算法辅助平台"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141,<0.142",
+    "uvicorn>=0.52,<0.53",
+    "pydantic>=2.13,<2.14",
+    "pydantic-settings>=2.15,<2.16",
+    "httpx>=0.28,<0.29",
+    "streamlit>=1.61,<1.62",
+    "numpy>=2.4,<2.5",
+    "scipy>=1.18,<1.19",
+    "pandas>=3.0,<3.1",
+    "scikit-learn>=1.9,<1.10",
+    "matplotlib>=3.11,<3.12",
+    "joblib>=1.5,<1.6",
+    "PyYAML>=6.0,<6.1",
+    "torch>=2.11,<2.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.1,<9.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,21 @@
+{
+  "verification_id": "agt-e2e-final-20260815174832",
+  "verified_at": "2026-08-15T17:55:30+08:00",
+  "framework_version": "v1.2.2",
+  "team_resource_name": "toolwear-phm2010-c1-team",
+  "team_runtime_name": "ToolWear_agent",
+  "human_event_id": "$ORgEVGqIZxh_d94Y_ZyuaVkI0IQo_7pSCt9y_d28aac",
+  "assignment_event_ids": {
+    "DataStewardAgent": "$2dR0nETdEgRLBTPfR2JYNkuxGSqWs2HmOCDZ4hMX6Ps",
+    "AlgorithmArchitectAgent": "$52ESjOWRjyx5Rhbb2lQ5xP-Fc2Y2bjmtEygXRzGkV5c",
+    "CodeTrainingEngineerAgent": "$eHAyG-7QgB6PXy7hXfilw3zsivcA-kfThiHfP_Q0Mj0",
+    "EvaluationGovernorAgent": "$6TvFwwGfzDP6CppqGnx5y1FK9IyEt5AoIKviSdAvS7c",
+    "ReportMemoryCuratorAgent": "$QiqNX7bCeN0leARd7VgD55HZI6wI3Y9TLcxYGEBMWtA"
+  },
+  "leader_summary_event_id": "$40UAUBQ3DaYzRJE828lmKUdlqkXbGOACZ_JznGi1giU",
+  "correlation_id": "agt-e2e-final-20260815174832",
+  "experiment_id": "p0-diagnosis-smoke-20260815",
+  "trace_id": "trace-7afd25bfa6484063b84dc966dc6ea407",
+  "higress_provider": "qwen-toolwear",
+  "higress_route": "default-ai-route"
+}
