@@ -7,7 +7,7 @@
 在项目 Python 环境中执行：
 
 ```powershell
-& "F:\uploadtool\anaconda\envs\ToolWear_agent\python.exe" -m toolwear_agent official-agentteams-c1
+python -m toolwear_agent official-agentteams-c1
 ```
 
 命令会从 `toolwear_agent/agentteams/official_adapter.py` 和 `worker_skill_client.py` 生成 10 个 Worker Skill。每个 Skill 都包含：
@@ -19,7 +19,7 @@ schema/input.schema.json
 schema/output.schema.json
 ```
 
-默认生成目录为 `D:\AI_infra\agentteams\phm2010_c1_minimal\worker-skills`，并同步安装到 Manager workspace。生成包不写入 API Key 或 Tool Token；客户端运行时只从环境变量或外部 secret 文件读取凭据。
+默认生成目录为 `$AI_INFRA_ROOT/agentteams/phm2010_c1_minimal/worker-skills`，并同步安装到 Manager workspace。生成包不写入 API Key 或 Tool Token；客户端运行时只从环境变量或外部 secret 文件读取凭据。
 
 ## 为什么需要修复
 
@@ -30,7 +30,7 @@ schema/output.schema.json
 ## 构建
 
 ```powershell
-& "F:\Toolwear_agent\toolwear_agent_app\deploy\agentteams\build_worker_image.ps1"
+.\deploy\agentteams\build_worker_image.ps1
 ```
 
 构建脚本只生成镜像，不停止或删除现有容器。默认要求本机已存在官方 `v1.2.2` 源码目录；当前验证源码标签为 `v1.2.2`，提交为 `849182a`。
@@ -40,7 +40,7 @@ schema/output.schema.json
 Team 和 Skill 已运行后，在仓库根目录执行：
 
 ```powershell
-& "F:\uploadtool\anaconda\envs\ToolWear_agent\python.exe" scripts\verify_agentteams_deployment.py
+python .\scripts\verify_agentteams_deployment.py
 ```
 
-该命令只读查询 Docker 与 `agt`，并把脱敏结果写入 `D:\AI_infra\agentteams\status.json` 和对应 evidence 目录。
+该命令只读查询 Docker 与 `agt`，并把脱敏结果写入 `$AI_INFRA_ROOT/agentteams/status.json` 和对应 evidence 目录。

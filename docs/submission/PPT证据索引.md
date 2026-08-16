@@ -1,6 +1,6 @@
 # “刃知”初赛 PPT 证据索引
 
-本索引将 19 页初赛方案中的关键陈述映射到代码、干净截图和本机真实运行记录。公开仓库只保存可公开材料；`D:\AI_infra` 下的原始数据、模型、日志和私有运行产物仅用于本机复验。
+本索引将 19 页初赛方案中的关键陈述映射到代码、干净截图和真实运行记录。公开仓库只保存可公开材料；使用者在 `$AI_INFRA_ROOT` 配置的原始数据、模型、日志和私有运行产物仅用于本地复验。
 
 ## 统一实验标识
 
@@ -27,8 +27,8 @@ run_id：run-5060d635be9bc80a9cccb7f6
 | 7 | 七阶段状态轨道 | 实验从定义、准备、候选、审批、训练、评估到决策归档 | `toolwear_agent/state/`、`toolwear_agent/frontend/experiment_workspace.py` |
 | 8 | 多 Agent 协同 | 六个 Agent 具有独立身份、输入输出、权限和失败边界 | `docs/agent-identities.md`、`toolwear_agent/agents/catalog.py` |
 | 9 | AgentTeams 实证 | 六 Agent 共 7 条真实 LLM 调用；一次输出策略拒绝后补齐 Registry 输入并重试成功 | `docs/assets/demo/11-agent-collaboration.png`、`12-element-agentteams-team.png`、`docs/evidence/agentteams_e2e_final_manifest.json` |
-| 10 | Skill 工程体系 | 10 个 Skill 具有 Schema、触发条件、依赖、错误处理和安全边界 | `docs/skill-manifest.md`、`toolwear_agent/agentteams/official_adapter.py` |
-| 11 | 候选与审批 | 千问生成 3 个 Registry 兼容候选；人工批准后形成不可变 Pipeline revision | `docs/assets/demo/04-llm-candidates.png`、`05-approved-pipeline.png` |
+| 10 | Skill 工程体系 | 自然语言建议必须通过 Registry 与 Tool API 契约才能执行 | `docs/skill-manifest.md`、`toolwear_agent/agentteams/official_adapter.py` |
+| 11 | Skill 契约实证 | 10 个 Skill 均有 Owner、文档、客户端、输入输出 Schema、权限和失败边界，并关联真实 AgentTeams 调用上下文 | `docs/assets/demo/13-skill-registry-evidence.png`、`docs/skill-manifest.md`、`docs/evidence/agentteams_e2e_final_manifest.json` |
 | 12 | 工程验证与安全 | 状态机、幂等、审批、final test 隔离、Evidence 哈希和失败恢复由代码约束 | `docs/security.md`、`toolwear_agent/delivery/`、`tests/` |
 | 13 | 真实 Demo | 真实候选、训练、指标和诊断来自同一 experiment/trace/run | `docs/assets/demo/04-llm-candidates.png`、`06-training-result.png`、`07-evaluation-metrics.png`、`08-evaluation-diagnosis.png` |
 | 14 | 开放与开源 | 公开代码、配置样例、测试、文档和复验入口 | `README.md`、`.env.example`、`pyproject.toml`、`tests/` |

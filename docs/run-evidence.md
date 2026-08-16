@@ -69,4 +69,4 @@ python .\scripts\verify_agentteams_deployment.py
 python .\scripts\verify_submission_readiness.py
 ```
 
-前两项真实证据复验依赖本机 `D:\AI_infra` 中的运行记录和 AgentTeams 环境；公开代码包在没有 PHM2010 原始数据时仍可执行单元测试和提交完整性检查。
+真实实验复验依赖使用者通过 `AI_INFRA_ROOT` 配置的运行记录和 AgentTeams 环境；公开代码包在没有 PHM2010 原始数据时仍可执行单元测试和提交完整性检查。

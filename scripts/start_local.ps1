@@ -1,14 +1,29 @@
 param(
-    [string]$PythonExe = "F:\uploadtool\anaconda\envs\ToolWear_agent\python.exe"
+    [string]$PythonExe = ""
 )
 
 $ErrorActionPreference = "Stop"
 $repositoryRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
-$logRoot = "D:\AI_infra\logs\services"
+$runtimeRoot = if ($env:AI_INFRA_ROOT) {
+    [System.IO.Path]::GetFullPath($env:AI_INFRA_ROOT, $repositoryRoot)
+}
+else {
+    Join-Path $repositoryRoot ".runtime"
+}
+$logRoot = Join-Path $runtimeRoot "logs\services"
 $stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 
+if (-not $PythonExe) {
+    $PythonExe = $env:TOOLWEAR_PYTHON
+}
+if (-not $PythonExe) {
+    $pythonCommand = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCommand) {
+        $PythonExe = $pythonCommand.Source
+    }
+}
 if (-not (Test-Path -LiteralPath $PythonExe -PathType Leaf)) {
-    throw "未找到 ToolWear Python：$PythonExe"
+    throw "未找到 Python。请激活项目环境，设置 TOOLWEAR_PYTHON，或通过 -PythonExe 指定解释器。"
 }
 New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
 

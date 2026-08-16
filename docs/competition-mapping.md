@@ -1,6 +1,6 @@
 # GOAI Agent Infra 初赛要求映射
 
-依据：`D:\desk\AI infra 比赛要求.pdf` 与官方赛道页面。初赛必交作品简介和方案 PPT/PDF；代码包可选。本项目额外提交可运行脱敏代码包和真实证据，以降低“仅概念方案”的风险。
+依据：官方参赛要求 PDF 与赛道页面。初赛必交作品简介和方案 PPT/PDF；代码包可选。本项目额外提交可运行脱敏代码包和真实证据，以降低“仅概念方案”的风险。
 
 ## 核心要求映射
 
@@ -20,6 +20,14 @@
 | 审批、回滚与审计 | Pipeline、结构、完整训练和报告发布审批；revision 不覆盖历史；幂等与 cancel | approvals/state events/tests | 已完成 P0 |
 | 开放/开源计划 | 开放 Agent/Skill/API/Registry/状态机/测试/部署与脱敏样例；不开放密钥、原始数据和私有产物 | `docs/security.md` | 已说明 |
 | 安全发布 | 白名单 ZIP、secret scan、危险后缀/路径/大文件拦截、拒绝覆盖已有包 | `scripts/build_submission_package.ps1` 与测试 | 已完成 |
+
+## 初赛提交材料核对
+
+| 提交材料 | 官方形式与内容 | 本项目文件 | 状态 |
+| --- | --- | --- | --- |
+| 作品简介 | 500 字以内；包含项目名称、问题与场景、核心方案、创新与差异、开放复用价值、当前进展 | `docs/submission/初赛作品简介.md` | 已完成，正文 495 字符 |
+| 方案 PPT/PDF | 场景与价值、方案设计、Skill 与工具集成、可行性与落地计划；明确 Agent 分工、任务拆解、上下文传递、结果验证、异常分支、安全边界、风险控制、开放/开源计划 | `docs/submission/刃知-AgentTeams-初赛方案.pptx` 与 `.pdf` | 已逐项映射 |
+| 可执行 AgentTeams 代码包 | 仓库链接或压缩包；含运行入口、依赖说明、配置文件、样例输入输出和运行证据 | `README.md`、`pyproject.toml`、`.env.example`、`examples/`、`docs/run-evidence.md` | 主动提交 |
 
 ## 多 Agent 闭环八项
 

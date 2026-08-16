@@ -9,14 +9,14 @@
 在 PowerShell 7 中进入仓库根目录后执行：
 
 ```powershell
-& 'F:\Toolwear_agent\baseline\.cache\PowerShell-win-x64\pwsh.exe' -File .\scripts\start_local.ps1
+.\scripts\start_local.ps1
 ```
 
 入口：
 
 - Streamlit：`http://127.0.0.1:18101`
 - FastAPI：`http://127.0.0.1:18100`
-- SQLite：`D:\AI_infra\state\toolwear.db`
+- SQLite：`$AI_INFRA_ROOT/state/toolwear.db`（未配置时位于仓库 `.runtime/state`）
 
 ## 页面演示顺序
 
@@ -32,7 +32,7 @@
 ## Golden Flow 只读复验
 
 ```powershell
-& 'F:\uploadtool\anaconda\envs\ToolWear_agent\python.exe' .\scripts\verify_golden_flow.py
+python .\scripts\verify_golden_flow.py
 ```
 
 预期关键结果：
